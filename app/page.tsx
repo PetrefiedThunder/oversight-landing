@@ -1,6 +1,6 @@
 const codeExample = `from sentinel import oversight
 
-@oversight(risk_level="high", approvers=["mailto:finance@acme.com"])
+@oversight(risk_level="high", approvers=["sms:+15551234567"])
 def transfer_funds(amount: float, to_account: str) -> dict:
     """Wire transfer. Requires human approval before executing."""
     return banking_api.transfer(amount, to_account)`;
@@ -30,7 +30,7 @@ const tiers = [
     features: [
       "1,000 approvals/mo",
       "1 user",
-      "Email approvals",
+      "Text message approvals",
       "7-day audit retention",
       "Community support",
     ],
