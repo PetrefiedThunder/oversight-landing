@@ -9,7 +9,7 @@ export const metadata = {
     title: "Sentinel — Oversight layer for AI agents",
     description:
       "Human-in-the-loop approval, hash-chained audit log, and oversight infrastructure for AI agents.",
-    url: "https://oversight.sh",
+    url: "https://pauseapi.app",
     siteName: "Sentinel",
   },
 };

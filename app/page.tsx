@@ -68,7 +68,7 @@ export default function Page() {
           <nav className="flex items-center gap-6 text-sm text-neutral-300">
             <a href="https://github.com/PetrefiedThunder/sentinel-sdk" className="hover:text-white">GitHub</a>
             <a href="https://github.com/PetrefiedThunder/sentinel-sdk#readme" className="hover:text-white">Docs</a>
-            <a href="https://app.oversight.sh/login" className="hover:text-white">Sign in</a>
+            <a href="https://app.pauseapi.app/login" className="hover:text-white">Sign in</a>
           </nav>
         </div>
       </header>
@@ -83,7 +83,7 @@ export default function Page() {
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a
-            href="https://app.oversight.sh/login"
+            href="https://app.pauseapi.app/login"
             className="bg-white text-black px-5 py-2.5 rounded text-sm font-medium hover:bg-neutral-200"
           >
             Get an API key
@@ -131,7 +131,7 @@ export default function Page() {
                 ))}
               </ul>
               <a
-                href="https://app.oversight.sh/login"
+                href="https://app.pauseapi.app/login"
                 className="mt-6 inline-block text-center bg-white text-black px-4 py-2 rounded text-sm font-medium hover:bg-neutral-200"
               >
                 Get started
