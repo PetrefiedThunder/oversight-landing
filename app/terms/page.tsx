@@ -22,11 +22,17 @@ export default function TermsPage() {
             email address or phone number you configure in Sentinel.
           </p>
           <p>
+            Before configuring a phone number for SMS approvals, you must confirm that the
+            approver consented to receive Sentinel transactional approval texts. Sentinel records
+            that attestation and may block approval requests to phone numbers without active
+            consent.
+          </p>
+          <p>
             Sentinel text messages are transactional approval notifications and service messages.
             By providing or configuring a phone number for Sentinel approvals, you consent to
             receive text messages related to approval requests and service operation. Message
-            frequency varies. Message and data rates may apply. Reply STOP to opt out and HELP for
-            help.
+            frequency varies. Message and data rates may apply. Reply STOP to revoke future SMS
+            approval notifications and HELP for help.
           </p>
           <p>
             Do not use Sentinel to send marketing, spam, unlawful content, sensitive regulated

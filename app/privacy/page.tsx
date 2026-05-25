@@ -29,6 +29,12 @@ export default function PrivacyPage() {
             Reply STOP to opt out and HELP for help.
           </p>
           <p>
+            Workspace owners must attest that an SMS approver has consented before configuring
+            that phone number in Sentinel. Sentinel records the consent attestation source,
+            timestamp, and revocation status so future approval notifications can be blocked when
+            consent is revoked.
+          </p>
+          <p>
             We do not sell personal information. We do not share SMS opt-in consent or phone
             numbers with third parties or affiliates for marketing or promotional purposes.
           </p>
