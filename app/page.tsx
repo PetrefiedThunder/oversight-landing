@@ -83,7 +83,7 @@ export default function Page() {
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a
-            href="https://app.pauseapi.app/login"
+            href="https://app.pauseapi.app/signup"
             className="bg-white text-black px-5 py-2.5 rounded text-sm font-medium hover:bg-neutral-200"
           >
             Get an API key
@@ -131,7 +131,7 @@ export default function Page() {
                 ))}
               </ul>
               <a
-                href="https://app.pauseapi.app/login"
+                href="https://app.pauseapi.app/signup"
                 className="mt-6 inline-block text-center bg-white text-black px-4 py-2 rounded text-sm font-medium hover:bg-neutral-200"
               >
                 Get started
