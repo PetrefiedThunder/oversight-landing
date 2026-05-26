@@ -46,6 +46,7 @@ const TOC = [
   { id: "langchain", label: "LangChain" },
   { id: "tenants", label: "Tenant settings" },
   { id: "audit", label: "Audit log" },
+  { id: "webhooks", label: "Webhooks" },
   { id: "config", label: "Config" },
 ];
 
@@ -357,7 +358,73 @@ events = client.list_audit_events(action_id="act_...")
             </p>
           </Section>
 
-          <Section id="config" title="10. Configuration">
+          <Section id="webhooks" title="10. Webhooks">
+            <p>
+              Register a URL on your tenant and Sentinel will POST to it
+              whenever an approval is decided (approved or rejected). Use
+              this to mirror events into your own audit system, ping
+              Slack, fan out to other services, etc.
+            </p>
+            <p className="text-sm text-neutral-400">Register a new endpoint:</p>
+            <Code>{`curl -X POST https://api.pauseapi.app/v1/webhooks \\
+  -H "Authorization: Bearer $SENTINEL_API_KEY" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "url": "https://api.yourcompany.com/sentinel-webhook",
+    "description": "audit fan-out",
+    "event_filter": ["approval.approved", "approval.rejected"]
+  }'
+
+# returns: { id, url, secret: "whsec_...", ... }
+# the secret is shown ONCE — store it`}</Code>
+
+            <p className="text-sm text-neutral-400 mt-6">
+              Verify the signature on your side (every delivery has
+              <code> X-Sentinel-Signature</code> header):
+            </p>
+            <Code>{`# Python
+import hashlib, hmac
+
+def is_authentic(request) -> bool:
+    raw_body = request.body  # bytes — read BEFORE parsing JSON
+    sent_sig = request.headers.get("X-Sentinel-Signature", "")
+    expected = hmac.new(
+        WEBHOOK_SECRET.encode(),
+        raw_body,
+        hashlib.sha256,
+    ).hexdigest()
+    return hmac.compare_digest(expected, sent_sig)`}</Code>
+
+            <Code>{`// TypeScript / Node
+import { createHmac, timingSafeEqual } from 'node:crypto';
+
+function isAuthentic(req: Request): boolean {
+  const sig = req.headers.get('x-sentinel-signature') ?? '';
+  const expected = createHmac('sha256', WEBHOOK_SECRET)
+    .update(req.rawBody)  // bytes, BEFORE parsing JSON
+    .digest('hex');
+  return sig.length === expected.length &&
+    timingSafeEqual(Buffer.from(sig), Buffer.from(expected));
+}`}</Code>
+
+            <p className="text-sm text-neutral-400 mt-4">
+              Headers on every delivery:
+            </p>
+            <ul className="list-disc pl-6 space-y-1 text-sm">
+              <li><code>X-Sentinel-Signature</code> — HMAC-SHA256 hex digest</li>
+              <li><code>X-Sentinel-Event</code> — <code>approval.approved</code> or <code>approval.rejected</code></li>
+              <li><code>X-Sentinel-Delivery</code> — unique id per attempt</li>
+            </ul>
+
+            <p className="text-sm text-neutral-400 mt-4">
+              Retry policy: up to 3 attempts (1s, 4s, 16s backoff) on 5xx
+              and network errors. 4xx responses are treated as terminal
+              rejections — we won't retry. Inspect attempts:
+            </p>
+            <Code>GET /v1/webhooks/deliveries?endpoint_id=whk_...&limit=50</Code>
+          </Section>
+
+          <Section id="config" title="11. Configuration">
             <div className="overflow-x-auto">
               <table className="w-full text-sm border border-neutral-800">
                 <thead className="bg-neutral-950 text-neutral-400">
