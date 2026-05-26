@@ -1,3 +1,10 @@
+export const metadata = {
+  title: "Privacy Policy — Sentinel",
+  description:
+    "Sentinel privacy policy: how Sentinel (operated by RegEngine, Inc.) collects, uses, and protects personal information, including SMS opt-in consent and phone numbers for transactional approval notifications.",
+  robots: { index: true, follow: true },
+};
+
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen">

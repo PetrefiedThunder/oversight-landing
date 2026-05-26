@@ -1,3 +1,10 @@
+export const metadata = {
+  title: "Terms of Service — Sentinel",
+  description:
+    "Sentinel terms of service. Sentinel is operated by RegEngine, Inc. and provides human-in-the-loop approval workflows for AI agent actions.",
+  robots: { index: true, follow: true },
+};
+
 export default function TermsPage() {
   return (
     <main className="min-h-screen">
