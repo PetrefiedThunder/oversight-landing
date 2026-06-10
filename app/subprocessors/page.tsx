@@ -72,6 +72,7 @@ export default function SubprocessorsPage() {
           <a href="/" className="font-semibold tracking-tight text-white">Sentinel</a>
           <nav className="text-sm flex gap-6">
             <a href="/docs" className="hover:text-white">Docs</a>
+            <a href="/pricing" className="hover:text-white">Pricing</a>
             <a href="/sla" className="hover:text-white">SLA</a>
             <a href="/subprocessors" className="text-white">Subprocessors</a>
           </nav>
