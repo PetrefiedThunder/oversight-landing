@@ -46,6 +46,7 @@ export default async function StatusPage() {
           <a href="/" className="font-semibold tracking-tight text-white">Sentinel</a>
           <nav className="text-sm flex gap-6">
             <a href="/docs" className="hover:text-white">Docs</a>
+            <a href="/pricing" className="hover:text-white">Pricing</a>
             <a href="/status" className="text-white">Status</a>
             <a href="https://app.pauseapi.app/signup" className="bg-white text-black px-3 py-1 rounded font-medium">Get started</a>
           </nav>

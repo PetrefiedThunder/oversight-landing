@@ -15,6 +15,7 @@ export default function SLAPage() {
           </a>
           <nav className="text-sm flex gap-6">
             <a href="/docs" className="hover:text-white">Docs</a>
+            <a href="/pricing" className="hover:text-white">Pricing</a>
             <a href="/status" className="hover:text-white">Status</a>
             <a href="/sla" className="text-white">SLA</a>
           </nav>

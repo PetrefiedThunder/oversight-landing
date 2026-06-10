@@ -65,6 +65,9 @@ export default function DocsPage() {
             <Link href="/docs" className="text-white">
               Docs
             </Link>
+            <a href="/pricing" className="hover:text-white">
+              Pricing
+            </a>
             <a
               href="https://github.com/PetrefiedThunder"
               className="hover:text-white"
