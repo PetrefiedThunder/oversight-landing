@@ -120,7 +120,11 @@ export default function Page() {
             © 2026 Built by the team at{" "}
             <a href="https://regengine.co" className="text-neutral-200 hover:text-white">RegEngine</a>
           </div>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <a href="/security" className="hover:text-white">Security</a>
+            <a href="/subprocessors" className="hover:text-white">Subprocessors</a>
+            <a href="/sla" className="hover:text-white">SLA</a>
+            <a href="/status" className="hover:text-white">Status</a>
             <a href="/sms-consent" className="hover:text-white">SMS consent</a>
             <a href="/privacy" className="hover:text-white">Privacy</a>
             <a href="/terms" className="hover:text-white">Terms</a>
