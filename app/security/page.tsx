@@ -75,7 +75,7 @@ export default function SecurityPage() {
             <li>Dashboard access requires the same API key (paste at login)</li>
             <li>Admin endpoints require a separate operator-only token (<code>ADMIN_TOKEN</code>)</li>
             <li>Magic-link approve/reject tokens are scoped to one action and expire with the approval's <code>timeout_seconds</code></li>
-            <li>SSO via SAML/OIDC: planned for Q3 2026 (see <a href="https://github.com/PetrefiedThunder/sentinel-api/blob/main/docs/adr/README.md" className="text-white underline">ADR roadmap</a>)</li>
+            <li>SSO via SAML/OIDC: planned for Q3 2026 (ADR roadmap available under NDA)</li>
           </ul>
         </Section>
 
@@ -132,14 +132,8 @@ export default function SecurityPage() {
 
         <Section title="Incident response">
           <p>
-            Internal runbook lives in{" "}
-            <a
-              href="https://github.com/PetrefiedThunder/sentinel-api/blob/main/docs/runbooks/incident-response.md"
-              className="text-white underline"
-            >
-              sentinel-api/docs/runbooks/incident-response.md
-            </a>
-            . We commit to:
+            We maintain an internal incident-response runbook (available under
+            NDA). We commit to:
           </p>
           <ul className="list-disc pl-6 mt-3 space-y-1">
             <li>Status page update within 30 minutes of detection</li>
