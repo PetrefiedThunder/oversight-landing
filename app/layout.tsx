@@ -1,7 +1,9 @@
 import "./globals.css";
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
-export const metadata = {
+export const metadata: Metadata = {
+  metadataBase: new URL("https://pauseapi.app"),
   title: "Sentinel — Oversight layer for AI agents",
   description:
     "Human-in-the-loop approval, hash-chained audit log, and oversight infrastructure for AI agents. Open source.",
