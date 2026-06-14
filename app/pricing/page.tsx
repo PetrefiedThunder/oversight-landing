@@ -1,60 +1,14 @@
+// TIERS is sourced from the canonical pricing module so this page and the home
+// page (app/page.tsx) stay in sync. This page remains the source of truth — edit
+// lib/pricing.ts to change pricing.
+import { TIERS } from "@/lib/pricing";
+
 export const metadata = {
   title: "Pricing — Sentinel",
   description:
     "Sentinel pricing: a free tier for getting started, Pro at $199/mo with unlimited approvals and a 99.5% SLA, and Enterprise for custom needs.",
   robots: { index: true, follow: true },
 };
-
-const TIERS = [
-  {
-    name: "Free",
-    price: "$0",
-    period: "",
-    highlight: false,
-    features: [
-      "100 approvals/mo",
-      "Email approver channel",
-      "Dashboard",
-      "Audit log (30-day retention)",
-      "Community support",
-    ],
-    cta: { label: "Start free", href: "https://app.pauseapi.app/signup" },
-  },
-  {
-    name: "Pro",
-    price: "$199",
-    period: "/mo",
-    highlight: true,
-    features: [
-      "Unlimited approvals",
-      "SMS approver channel",
-      "Webhooks (HMAC-signed)",
-      "Branded sender domain",
-      "Audit CSV export",
-      "99.5% SLA",
-      "Priority email support",
-    ],
-    cta: { label: "Upgrade in dashboard", href: "https://app.pauseapi.app/billing" },
-  },
-  {
-    name: "Enterprise",
-    price: "Talk to us",
-    period: "",
-    highlight: false,
-    features: [
-      "Everything in Pro",
-      "SSO (roadmap)",
-      "Custom retention",
-      "DPA",
-      "Dedicated support channel",
-      "Security review w/ threat model + pentest (under NDA)",
-    ],
-    cta: {
-      label: "Email us",
-      href: "mailto:support@regengine.co?subject=Sentinel%20Enterprise",
-    },
-  },
-];
 
 const FAQS = [
   {

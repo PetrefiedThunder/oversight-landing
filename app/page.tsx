@@ -1,3 +1,8 @@
+// Pricing is imported from the canonical pricing module. /pricing
+// (app/pricing/page.tsx) is the source of truth — edit lib/pricing.ts to change
+// prices so this page and /pricing never drift apart.
+import { TIERS } from "@/lib/pricing";
+
 const codeExample = `from sentinel import oversight
 
 @oversight(risk_level="high", approvers=["sms:+15551234567"])
@@ -20,42 +25,6 @@ const features = [
     eyebrow: "Control",
     title: "Configurable fallbacks",
     body: "Block on timeout, execute on timeout, or escalate. You decide what's safe for each function.",
-  },
-];
-
-const tiers = [
-  {
-    name: "Free",
-    price: "$0",
-    features: [
-      "1,000 approvals/mo",
-      "1 user",
-      "Text message approvals",
-      "7-day audit retention",
-      "Community support",
-    ],
-  },
-  {
-    name: "Pro",
-    price: "$99/mo",
-    features: [
-      "50,000 approvals/mo",
-      "10 users",
-      "All integrations",
-      "1-year audit retention",
-      "Email support",
-    ],
-  },
-  {
-    name: "Scale",
-    price: "$499/mo",
-    features: [
-      "Unlimited approvals",
-      "Unlimited users",
-      "SSO",
-      "Infinite audit retention",
-      "SLA, priority support",
-    ],
   },
 ];
 
@@ -122,20 +91,23 @@ export default function Page() {
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">Simple per-approval pricing.</h2>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
-          {tiers.map((t) => (
+          {TIERS.map((t) => (
             <div key={t.name} className="border border-neutral-900 rounded p-6 flex flex-col">
               <div className="text-sm text-neutral-400">{t.name}</div>
-              <div className="text-3xl font-semibold mt-2 mb-6">{t.price}</div>
+              <div className="text-3xl font-semibold mt-2 mb-6">
+                {t.price}
+                {t.period && <span className="text-neutral-500">{t.period}</span>}
+              </div>
               <ul className="space-y-2 text-sm text-neutral-400 flex-1">
                 {t.features.map((feat) => (
                   <li key={feat}>{feat}</li>
                 ))}
               </ul>
               <a
-                href="https://app.pauseapi.app/signup"
+                href={t.cta.href}
                 className="mt-6 inline-block text-center bg-white text-black px-4 py-2 rounded text-sm font-medium hover:bg-neutral-200"
               >
-                Get started
+                {t.cta.label}
               </a>
             </div>
           ))}

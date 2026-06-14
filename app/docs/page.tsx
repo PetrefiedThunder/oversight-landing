@@ -103,6 +103,19 @@ export default function DocsPage() {
             ))}
           </ul>
           <p className="text-xs uppercase tracking-wider text-neutral-500 mt-8 mb-3">
+            Reference
+          </p>
+          <ul className="space-y-2">
+            <li>
+              <a
+                href="https://api.pauseapi.app/docs"
+                className="text-neutral-400 hover:text-white"
+              >
+                API Reference
+              </a>
+            </li>
+          </ul>
+          <p className="text-xs uppercase tracking-wider text-neutral-500 mt-8 mb-3">
             SDKs
           </p>
           <ul className="space-y-2">
@@ -115,12 +128,8 @@ export default function DocsPage() {
               </a>
             </li>
             <li>
-              <a
-                href="https://www.npmjs.com/package/sentinel-oversight"
-                className="text-neutral-400 hover:text-white"
-              >
-                JavaScript (npm)
-              </a>
+              {/* JS/TS SDK is not published to npm yet — link disabled until release. */}
+              <span className="text-neutral-600">JavaScript (npm) — coming soon</span>
             </li>
             <li>
               <a
@@ -147,8 +156,10 @@ export default function DocsPage() {
           <Section id="install" title="1. Install">
             <p>Python:</p>
             <Code>pip install sentinel-oversight</Code>
-            <p>JavaScript / TypeScript (Node ≥ 18.17):</p>
-            <Code>npm install sentinel-oversight</Code>
+            <p className="text-neutral-400">
+              JS/TS SDK — coming soon. The TypeScript package is not published to
+              npm yet; the examples below show the planned API.
+            </p>
           </Section>
 
           <Section id="quick-start" title="2. Quick start">
