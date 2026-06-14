@@ -67,7 +67,8 @@ export default function Page() {
           <a href="/" className="font-semibold tracking-tight">Sentinel</a>
           <nav className="flex items-center gap-6 text-sm text-neutral-300">
             <a href="https://github.com/PetrefiedThunder/sentinel-sdk" className="hover:text-white">GitHub</a>
-            <a href="https://github.com/PetrefiedThunder/sentinel-sdk#readme" className="hover:text-white">Docs</a>
+            <a href="/docs" className="hover:text-white">Docs</a>
+            <a href="/pricing" className="hover:text-white">Pricing</a>
             <a href="https://app.pauseapi.app/login" className="hover:text-white">Sign in</a>
           </nav>
         </div>
@@ -148,6 +149,7 @@ export default function Page() {
             <a href="https://regengine.co" className="text-neutral-200 hover:text-white">RegEngine</a>
           </div>
           <div className="flex gap-6">
+            <a href="/sms-consent" className="hover:text-white">SMS consent</a>
             <a href="/privacy" className="hover:text-white">Privacy</a>
             <a href="/terms" className="hover:text-white">Terms</a>
           </div>

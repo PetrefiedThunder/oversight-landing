@@ -32,7 +32,8 @@ export default function TermsPage() {
             Before configuring a phone number for SMS approvals, you must confirm that the
             approver consented to receive Sentinel transactional approval texts. Sentinel records
             that attestation and may block approval requests to phone numbers without active
-            consent.
+            consent. The SMS consent flow is described at{" "}
+            <a href="/sms-consent" className="text-white underline">pauseapi.app/sms-consent</a>.
           </p>
           <p>
             Sentinel text messages are transactional approval notifications and service messages.

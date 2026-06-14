@@ -247,6 +247,14 @@ await wireTransfer(50_000_00, 'acct_acme_corp');`}</Code>
               Mix formats — every approver receives a notification, the{" "}
               <b>first decision wins</b>.
             </p>
+            <p className="text-sm text-neutral-500">
+              SMS approvers must be added in the dashboard with active consent
+              before they can receive approval texts. See the{" "}
+              <a href="/sms-consent" className="text-white underline">
+                SMS consent flow
+              </a>
+              .
+            </p>
           </Section>
 
           <Section id="risk" title="4. Risk levels">

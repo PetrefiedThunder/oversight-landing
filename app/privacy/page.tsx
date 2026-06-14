@@ -39,7 +39,8 @@ export default function PrivacyPage() {
             Workspace owners must attest that an SMS approver has consented before configuring
             that phone number in Sentinel. Sentinel records the consent attestation source,
             timestamp, and revocation status so future approval notifications can be blocked when
-            consent is revoked.
+            consent is revoked. The opt-in flow is described at{" "}
+            <a href="/sms-consent" className="text-white underline">pauseapi.app/sms-consent</a>.
           </p>
           <p>
             We do not sell personal information. We do not share SMS opt-in consent or phone
